@@ -1,0 +1,61 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Uploader</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/kaltura/KalturaFullClient.min.js"></script>
+</head>
+<body>
+
+    <h1>Kaltura Video Uploader</h1>
+
+    <div id="upload-section" class="section">
+        <h2>Upload Video</h2>
+        <div class="form-group">
+            <label for="entry-name">Name:</label>
+            <input type="text" id="entry-name" required>
+        </div>
+        <div class="form-group">
+            <label for="entry-description">Description:</label>
+            <textarea id="entry-description" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="entry-type">File Type:</label>
+            <select id="entry-type">
+                <option value="1">Video</option>
+                <option value="2">Image</option>
+                <option value="5">Audio</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="file-input" class="upload-btn">Choose File</label>
+            <input type="file" id="file-input" accept="video/*,image/*,audio/*">
+            <p id="file-name"></p>
+        </div>
+        <button id="upload-btn" class="upload-btn" style="display: none;">Upload</button>
+    </div>
+
+    <div id="loading-section" class="section hidden">
+        <h2>Uploading...</h2>
+        <div id="progress-bar">
+            <div id="progress"></div>
+        </div>
+        <p id="progress-text">0%</p>
+    </div>
+
+    <div id="result-section" class="section hidden">
+        <h2>Upload Complete</h2>
+        <p>Entry ID: <span id="entry-id"></span></p>
+        <button id="upload-another-btn" class="upload-btn">Upload Another Video</button>
+    </div>
+
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
