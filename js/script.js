@@ -21,10 +21,12 @@ fileInput.addEventListener('change', (e) => {
 
 uploadBtn.addEventListener('click', async () => {
     
+    uploadBtn.disabled = true;
     var name = document.getElementById("entry-name").value;
 
     if (!name) {
         alert('Please enter a name for the entry.');
+        uploadBtn.disabled = false;
         return;
     }
 
@@ -36,6 +38,7 @@ uploadBtn.addEventListener('click', async () => {
 uploadAnotherBtn.addEventListener('click', resetUpload);
 
 function resetUpload() {
+    uploadBtn.disabled = false;
     fileInput.value = '';
     fileName.textContent = '';
     uploadBtn.style.display = 'none';
@@ -78,7 +81,6 @@ function start_kaltura_session(){
         }
     });
     
-    add_kaltura_upload_token();    
 }
 
 function add_kaltura_upload_token(){
