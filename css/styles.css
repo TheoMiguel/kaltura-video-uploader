@@ -62,3 +62,97 @@ input[type="text"], textarea, select {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
+
+/* RESULT SECTION */
+.entry-id-section {
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Light border */
+    padding: 10px; /* Padding inside the div */
+    border-radius: 5px; /* Rounded corners */
+    margin: 10px 0; /* Margin around the div */
+    font-family: Arial, sans-serif; /* Font style */
+
+    display: flex;
+    align-items: center; 
+}
+
+.entry-id-section p {
+    margin: 0; /* Remove default margin from paragraph */
+    font-size: 14px; /* Font size */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Text color */
+}
+
+.entry-id-section #entry-id {
+    border: 1px solid lightgrey; /* Blue border for entry ID */
+    border-radius: 5px;
+    font-weight: bold; /* Bold text for entry ID */
+    color: #009900;
+    padding: 5px 10px; /* Padding inside the entry ID */
+}
+
+
+/* COPY BUTTON */
+.result-section {
+    display: flex;
+    /* align-items: center;  */
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin-left: auto; 
+}
+
+.copy-icon {
+    width: 20px;
+    margin-left: 5px; /* Space between text and icon */
+    height: 20px;
+}
+
+.button-text {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    margin-right: 5px;
+}
+
+.icon-button:hover .button-text {
+    opacity: 1;
+}
+
+/* TOAST */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toast {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.toast.show {
+    opacity: 1;
+}

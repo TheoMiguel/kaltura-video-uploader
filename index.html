@@ -52,7 +52,13 @@
 
     <div id="result-section" class="section hidden">
         <h2>Upload Complete</h2>
-        <p>Entry ID: <span id="entry-id"></span></p>
+        <div id="entry-id-section" class="entry-id-section">
+            <p>Entry ID: <span id="entry-id">entry id</span></p>
+            <button class="icon-button copy-button" aria-label="Copy entry ID">
+                <span class="button-text">Copy</span>
+                <img src="static/images/copy-icon.svg" alt="Copy" class="copy-icon">
+            </button>
+        </div>
         <button id="upload-another-btn" class="upload-btn">Upload Another Video</button>
     </div>
 

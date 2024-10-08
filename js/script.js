@@ -161,3 +161,45 @@ function add_content_to_media_entry(){
     });
 }
 
+const copyButton = document.querySelector('.copy-button');
+copyButton.addEventListener('click', function() {
+    const responseContent = document.querySelector('#entry-id');
+    copyTextToClipboard(responseContent.textContent);
+});
+
+function copyTextToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        showToast('ID copied to clipboard');
+    }, function(err) {
+        console.error('Could not copy ID: ', err);
+        showToast('Failed to copy ID');
+    });
+}
+
+function showToast(message) {
+    const toastContainer = document.getElementById('toastContainer') || createToastContainer();
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = message;
+    toastContainer.appendChild(toast);
+
+    // Trigger reflow to enable transition
+    toast.offsetHeight;
+
+    toast.classList.add('show');
+
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+            toastContainer.removeChild(toast);
+        }, 300); // Wait for the fade out transition to complete
+    }, 3000); // Show the toast for 3 seconds
+}
+
+function createToastContainer() {
+    const container = document.createElement('div');
+    container.id = 'toastContainer';
+    container.className = 'toast-container';
+    document.body.appendChild(container);
+    return container;
+}
